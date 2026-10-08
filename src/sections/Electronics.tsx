@@ -42,8 +42,8 @@ export function Electronics() {
             />
             <dl className="mt-14 grid gap-y-12 sm:grid-cols-2 2xl:grid-cols-4">
               {techStats.map((s, i) => (
-                <div key={s.label} className="border-l border-white/15 px-6" data-rev style={delay(90 * i)}>
-                  <dd className="order-first text-[clamp(2.2rem,3.4vw,3.2rem)] leading-none font-light whitespace-nowrap text-paper">
+                <div key={s.label} className="@container border-l border-white/15 px-6" data-rev style={delay(90 * i)}>
+                  <dd className="order-first text-[clamp(1.6rem,14cqw,3.2rem)] leading-none font-light text-paper">
                     <Counter value={s.value} decimals={s.decimals} prefix={s.prefix} suffix={s.suffix} />
                   </dd>
                   <dt className="mt-4 leading-snug text-mist">{s.label}</dt>
@@ -106,7 +106,7 @@ export function Electronics() {
           </div>
           <ol className="mt-16 grid gap-10 md:grid-cols-5 md:gap-0" data-rev>
             {fdiChain.map((c, i) => (
-              <li key={c.title} className="relative md:pr-8" style={delay(160 * i)}>
+              <li key={c.title} className="@container relative md:pr-8" style={delay(160 * i)}>
                 {i < fdiChain.length - 1 && (
                   <svg
                     aria-hidden="true"
@@ -139,7 +139,7 @@ export function Electronics() {
                 <span className="grid size-11 place-items-center rounded-full border border-feather/60">
                   <span className="size-3 rounded-full bg-seal" style={{ opacity: 0.35 + i * 0.16 }} />
                 </span>
-                <p className="mt-6 text-[clamp(1.7rem,2.4vw,2.4rem)] leading-none font-light whitespace-nowrap text-paper">
+                <p className="mt-6 text-[clamp(1.3rem,15cqw,2.4rem)] leading-none font-light text-paper">
                   {c.figure}
                 </p>
                 <h3 className="mt-4 text-[1.1rem] font-normal text-paper">{c.title}</h3>
