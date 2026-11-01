@@ -510,3 +510,86 @@ html.lenis body {
     transform: none;
   }
 }
+
+/* ── Muqova: yozuv kursori va suvga tushgan lak tomchisi ───────── */
+.cover-caret {
+  display: inline-block;
+  width: 0.06em;
+  height: 0.95em;
+  margin-left: 0.04em;
+  margin-right: -0.1em;
+  vertical-align: -0.12em;
+  background: var(--color-ink);
+}
+.cover-caret--idle {
+  animation: caret-blink 1.05s steps(1) infinite;
+}
+@keyframes caret-blink {
+  50% {
+    opacity: 0;
+  }
+}
+.cover-draw {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: cover-draw 2.2s var(--ease-ink) forwards;
+}
+@keyframes cover-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.cover-bloom,
+.cover-star,
+.cover-ripple {
+  transform-box: view-box;
+  transform-origin: 100px 100px;
+}
+.cover-bloom {
+  animation: cover-bloom 1.4s var(--ease-ink) 0.8s both;
+}
+@keyframes cover-bloom {
+  from {
+    transform: scale(0);
+  }
+}
+.cover-star {
+  animation:
+    cover-star 1.2s cubic-bezier(0.34, 1.45, 0.64, 1) 1.5s both,
+    cover-turn 40s linear 2.7s infinite;
+}
+@keyframes cover-star {
+  from {
+    transform: scale(0) rotate(-120deg);
+    opacity: 0;
+  }
+}
+@keyframes cover-turn {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.cover-ripple {
+  opacity: 0;
+  animation: cover-ripple 4.2s var(--ease-ink) infinite;
+}
+@keyframes cover-ripple {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cover-draw,
+  .cover-bloom,
+  .cover-star,
+  .cover-ripple,
+  .cover-caret--idle {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}

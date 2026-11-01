@@ -70,8 +70,7 @@ export function Intro() {
           </div>
           <div className="flex flex-wrap items-end justify-between gap-4 text-dilute" data-rev style={delay(600)}>
             <p className="text-sm">
-              {author.course} · 2026
-              {author.name && <span className="text-depth"> · {author.name}</span>}
+              {author.course} · 2026 · <span className="text-depth">{author.name}</span>, {author.group}
             </p>
           </div>
         </div>
